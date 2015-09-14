@@ -14,3 +14,8 @@ The code to make this particular picture looks like this
 lambda x, y: sin(pi)+tan(x)+tan(y)*tan(x*y)
 lambda x, y: tan(x*y) - sin(y)
 </code></pre>
+
+
+The program works by creating a list of possible lambda functions that look somewhat similar to those shown above. 
+Then a random.choice() function picks 3 of those to represent the appearance of red, green, and blue color expression.
+Try running the code with -n to see tons of different possibilities!
