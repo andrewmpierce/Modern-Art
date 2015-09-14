@@ -1,5 +1,5 @@
 import random
-
+from math import *
 # Your job is to create better version of create_expression and
 # run_expression to create random art.
 # Your expression should have a __str__() function defined for it.
@@ -8,10 +8,13 @@ import random
 def create_expression():
     """This function takes no arguments and returns an expression that
     generates a number between -1.0 and 1.0, given x and y coordinates."""
-    expr1 = lambda x, y: (x + y)/2
-    expr2 = lambda x, y: (x - y)/2
-    expr3 = lambda x, y: x * y
-    return random.choice([expr1, expr2, expr3])
+    list_options = []
+    list_options.append(lambda x, y: (sin(x) - sin(y)))
+    list_options.append(lambda x, y: (cos(x) - cos(y)))
+    list_options.append(lambda x, y: (sin(pi) + cos(pi)) * random.choice([sin(x), cos(pi)]))
+    list_options.append(lambda x, y: sin(pi)+tan(x)+tan(y)*tan(x*y))
+    list_options.append(lambda x, y: tan(x*y) - sin(y))
+    return random.choice(list_options)
 
 
 def run_expression(expr, x, y):
